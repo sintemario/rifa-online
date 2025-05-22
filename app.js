@@ -1,6 +1,6 @@
 // Configura Supabase
-const supabaseUrl = 'TU_URL_SUPABASE';
-const supabaseKey = 'TU_KEY_PUBLICA';
+const supabaseUrl = 'https://sbyzohdridbcygpwmfup.supabase.co';
+const supabaseKey = 'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNieXpvaGRyaWRiY3lncHdtZnVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc5NDMzNTEsImV4cCI6MjA2MzUxOTM1MX0.7KmEhJ25DSbUu8m';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Variables globales
