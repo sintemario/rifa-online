@@ -2,34 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rifa Online</title>
     <style>
-        .numero { display: inline-block; width: 30px; text-align: center; margin: 5px; cursor: pointer; }
-        .seleccionado { background-color: #4CAF50; color: white; }
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; }
+        .numero { 
+            display: inline-block; 
+            width: 30px; 
+            height: 30px; 
+            text-align: center; 
+            margin: 5px; 
+            cursor: pointer; 
+            border: 1px solid #ccc;
+            line-height: 30px;
+        }
+        .seleccionado { 
+            background-color: #4CAF50; 
+            color: white; 
+            border-color: #4CAF50;
+        }
+        #form2, #confirmacion { display: none; }
     </style>
 </head>
 <body>
     <div id="form1">
-        <input type="text" id="nombre" placeholder="Nombre" required>
+        <h1>Datos Personales</h1>
+        <input type="text" id="nombre" placeholder="Nombre*" required>
         <input type="text" id="apellido" placeholder="Apellido">
-        <input type="text" id="dni" placeholder="DNI" required>
-        <input type="text" id="celular" placeholder="Celular" required>
+        <input type="text" id="dni" placeholder="DNI*" required>
+        <input type="text" id="celular" placeholder="Celular*" required>
         <button onclick="mostrarNumeros()">Siguiente</button>
     </div>
 
-    <div id="form2" style="display:none;">
+    <div id="form2">
         <h2>Elige hasta 5 números (00-99):</h2>
         <div id="numeros-container"></div>
         <button onclick="reservar()">Reservar</button>
     </div>
 
-    <div id="confirmacion" style="display:none;">
+    <div id="confirmacion">
         <h2>¡Reserva exitosa!</h2>
         <p>Transfiere a: <strong id="alias-display">ALIAS_EJEMPLO</strong></p>
-        <p>Envía el comprobante por WhatsApp: <a id="whatsapp-link" href="#">Haz clic aquí</a></p>
+        <p>Envía el comprobante por WhatsApp: 
+            <a id="whatsapp-link" target="_blank">Haz clic aquí</a>
+        </p>
     </div>
 
-    <!-- Incluye Supabase -->
+    <!-- Incluye Supabase JS -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="app.js"></script>
 </body>
