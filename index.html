@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rifa Online</title>
+    <style>
+        .numero { display: inline-block; width: 30px; text-align: center; margin: 5px; cursor: pointer; }
+        .seleccionado { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <div id="form1">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="dni" placeholder="DNI" required>
+        <input type="text" id="celular" placeholder="Celular" required>
+        <button onclick="mostrarNumeros()">Siguiente</button>
+    </div>
+
+    <div id="form2" style="display:none;">
+        <h2>Elige hasta 5 números (00-99):</h2>
+        <div id="numeros-container"></div>
+        <button onclick="reservar()">Reservar</button>
+    </div>
+
+    <div id="confirmacion" style="display:none;">
+        <h2>¡Reserva exitosa!</h2>
+        <p>Transfiere a: <strong id="alias-display">ALIAS_EJEMPLO</strong></p>
+        <p>Envía el comprobante por WhatsApp: <a id="whatsapp-link" href="#">Haz clic aquí</a></p>
+    </div>
+
+    <!-- Incluye Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
